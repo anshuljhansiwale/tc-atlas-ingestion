@@ -1,0 +1,22 @@
+{
+  "name": "parts_vector_index",
+  "type": "vectorSearch",
+  "definition": {
+    "fields": [
+      {
+        "type": "autoEmbed",
+        "modality": "text",
+        "path": "embedding_text",
+        "model": "voyage-4"
+      },
+      {
+        "type": "filter",
+        "path": "item_id"
+      },
+      {
+        "type": "filter",
+        "path": "revision_id"
+      }
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+[project]
+name = "tc-atlas-ingestion"
+version = "0.1.0"
+description = "Teamcenter IGES + metadata ingestion into MongoDB Atlas with Voyage autoEmbed"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pymongo>=4.10.0",
+    "python-dotenv>=1.0.0",
+    "httpx>=0.27.0",
+    "pydantic>=2.9.0",
+    "pydantic-settings>=2.5.0",
+    "tenacity>=9.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.6.0",
+]
+
+[project.scripts]
+ingest = "ingestion.cli:main"
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
